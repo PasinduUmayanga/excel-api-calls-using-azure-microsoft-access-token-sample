@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+*.egg-info/
+build/
+dist/
+
+# Test / coverage output
+.pytest_cache/
+.coverage
+coverage.xml
+htmlcov/
+test-results.xml
+
+# NiceGUI local storage
+.nicegui/
+
+# Environment / secrets
+.env*
+
+# OS
+.DS_Store
+Thumbs.db
