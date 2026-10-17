@@ -1,6 +1,6 @@
 # API Runner
 
-[![Build status](https://ci.appveyor.com/api/projects/status/github/PasinduUmayanga/excel-api-calls-using-azure-microsoft-access-token-sample?branch=main&svg=true)](https://ci.appveyor.com/project/PasinduUmayanga/excel-api-calls-using-azure-microsoft-access-token-sample)
+[![Build status](https://ci.appveyor.com/api/projects/status/ct5sk0vu1suvajcf?svg=true)](https://ci.appveyor.com/project/Mahadenamuththa/excel-api-calls-using-azure-microsoft-access-token)
 ![Tests](https://img.shields.io/badge/tests-71%20passing-brightgreen?logo=pytest&logoColor=white)
 ![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)
 ![NiceGUI](https://img.shields.io/badge/UI-NiceGUI%203-5898d4)
