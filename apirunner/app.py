@@ -1,7 +1,7 @@
 """Entry point: registers pages and starts NiceGUI as a desktop window or a web server.
 
     python -m apirunner            # desktop window (native)
-    python -m apirunner --web      # browser at http://localhost:8080
+    python -m apirunner --web      # browser at http://localhost:8765
 """
 
 from __future__ import annotations
@@ -31,7 +31,7 @@ def main(argv: list[str] | None = None) -> None:
     parser = argparse.ArgumentParser(description="API Runner - generic API caller with Excel bulk & retry")
     parser.add_argument("--web", action="store_true", help="run in the browser instead of a desktop window")
     parser.add_argument("--host", default=os.environ.get("APIRUNNER_HOST", "127.0.0.1"))
-    parser.add_argument("--port", type=int, default=int(os.environ.get("APIRUNNER_PORT", "8080")))
+    parser.add_argument("--port", type=int, default=int(os.environ.get("APIRUNNER_PORT", "8765")))
     parser.add_argument("--no-show", action="store_true", help="do not open a browser (web mode)")
     args, _ = parser.parse_known_args(argv)
 

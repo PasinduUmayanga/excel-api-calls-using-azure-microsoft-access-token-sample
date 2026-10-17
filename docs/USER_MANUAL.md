@@ -21,7 +21,7 @@ and the sample file `samples/users.xlsx`.
 | Mode | Command |
 |---|---|
 | Desktop window | `python -m apirunner` |
-| Browser | `python -m apirunner --web`, then open http://127.0.0.1:8080 |
+| Browser | `python -m apirunner --web`, then open http://127.0.0.1:8765 |
 | Demo API (optional) | `python samples/mock_api.py` (runs on http://127.0.0.1:8099) |
 
 Templates, job history and settings are saved in `~/.apirunner/apirunner.db`. Set `APIRUNNER_DATA_DIR`

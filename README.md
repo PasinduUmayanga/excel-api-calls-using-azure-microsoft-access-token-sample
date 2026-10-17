@@ -154,7 +154,7 @@ python -m venv .venv
 pip install -e ".[dev]"
 
 python -m apirunner               # desktop window
-python -m apirunner --web         # browser at http://127.0.0.1:8080
+python -m apirunner --web         # browser at http://127.0.0.1:8765
 ```
 
 Try it without a real API: run `python samples/mock_api.py` (a local demo API on port 8099) and
@@ -169,7 +169,7 @@ AI buttons are hidden and everything else still works.
 | `ANTHROPIC_API_KEY` | Turns on AI features | – |
 | `APIRUNNER_AI_MODEL` | Claude model id | `claude-opus-5-5` |
 | `APIRUNNER_DATA_DIR` | Location of the SQLite database | `~/.apirunner` |
-| `APIRUNNER_HOST` / `APIRUNNER_PORT` | Web server address | `127.0.0.1` / `8080` |
+| `APIRUNNER_HOST` / `APIRUNNER_PORT` | Web server address | `127.0.0.1` / `8765` |
 
 ## How to use it
 
