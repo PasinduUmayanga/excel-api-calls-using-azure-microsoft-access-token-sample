@@ -3,8 +3,8 @@ version: 1.0.{build}
 image: Visual Studio 2022
 
 environment:
-  PYTHON: "C:\Python312-x64"
-  PIP_CACHE_DIR: "%LOCALAPPDATA%\pip\Cache"
+  PYTHON: 'C:\Python312-x64'
+  PIP_CACHE_DIR: '%LOCALAPPDATA%\pip\Cache'
   PYTHONUTF8: "1"
 
 # Cache pip downloads and the virtual environment. Both are invalidated when pyproject.toml changes.
