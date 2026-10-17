@@ -1,0 +1,39 @@
+# AppVeyor CI for API Runner (Python)
+version: 1.0.{build}
+image: Visual Studio 2022
+
+environment:
+  PYTHON: "C:\Python312-x64"
+  PIP_CACHE_DIR: "%LOCALAPPDATA%\pip\Cache"
+  PYTHONUTF8: "1"
+
+# Cache pip downloads and the virtual environment. Both are invalidated when pyproject.toml changes.
+cache:
+  - '%LOCALAPPDATA%\pip\Cache -> pyproject.toml'
+  - .venv -> pyproject.toml, appveyor.yml
+
+install:
+  - set PATH=%PYTHON%;%PYTHON%\Scripts;%PATH%
+  - python --version
+  - if not exist .venv\Scripts\python.exe python -m venv .venv
+  - .venv\Scripts\python -m pip install --upgrade pip
+  - .venv\Scripts\python -m pip install -e ".[dev]"
+
+build: off
+
+test_script:
+  - .venv\Scripts\python -m pytest --junitxml=test-results.xml --cov=apirunner --cov-report=xml --cov-report=term
+
+on_finish:
+  # Publish results to the AppVeyor "Tests" tab, even when tests fail
+  - ps: |
+      if (Test-Path .\test-results.xml) {
+        $wc = New-Object System.Net.WebClient
+        $wc.UploadFile("https://ci.appveyor.com/api/testresults/junit/$($env:APPVEYOR_JOB_ID)", (Resolve-Path .\test-results.xml))
+      }
+
+artifacts:
+  - path: test-results.xml
+    name: Test results
+  - path: coverage.xml
+    name: Coverage
